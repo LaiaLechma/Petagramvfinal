@@ -1,0 +1,35 @@
+<menu
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+
+    <item
+        android:id="@+id/mAbout"
+        android:orderInCategory="101"
+        android:title="@string/menu_about"
+        app:showAsAction="never">
+
+    </item>
+    <item
+        android:id="@+id/mContact"
+        android:orderInCategory="100"
+        android:title="@string/menu_contacta"
+        app:showAsAction="never">
+    </item>
+
+    <item
+        android:id="@+id/mCuenta"
+        android:orderInCategory="102"
+        android:title="@string/menu_cuenta"
+        app:showAsAction="never">
+    </item>
+
+    <item
+        android:id="@+id/mrecibirnotificaciones"
+        android:orderInCategory="103"
+        android:title="Recibir notificaciones"
+        app:showAsAction="never">
+    </item>
+</menu>

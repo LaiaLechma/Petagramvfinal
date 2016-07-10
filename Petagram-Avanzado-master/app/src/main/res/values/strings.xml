@@ -1,0 +1,38 @@
+<resources>
+    <string name="app_name">Petagram Avanzado</string>
+    <string name="nombre">Anahi Salgado</string>
+    <string name="telefono">55557777</string>
+    <string name="email">anahi@gmail.com</string>
+    <string name="pnombre">nombre</string>
+    <string name="pemail">email</string>
+    <string name="plikes">0</string>
+    <string name="likes">Likes</string>
+    <string name="titulo_paisaje_manana">Paisaje Campo Mañana</string>
+
+    <string name="texto_boton_guardar">Siguiente</string>
+    <string name="name">Nombre:</string>
+    <string name="mail">Mail:</string>
+    <string name="descripcion">Mensaje:</string>
+
+    <string name="usuario">Usuario:</string>
+
+    <string name="pname">Nombre</string>
+    <string name="ptelefono">Telefono</string>
+    <string name="pmail">Mail</string>
+    <string name="pfecha">Fecha</string>
+    <string name="pdescripcion">Mensaje</string>
+    <string name="texto_boton_modificar">Editar datos</string>
+    <string name="confirmar">Confirmar datos y Enviar</string>
+    <string name="texto_boton_mail">Confirmar y Enviar mail</string>
+
+
+    <string name="menu_about">Acerca de</string>
+    <string name="menu_contacta">Contacto</string>
+    <string name="menu_cuenta">Configurar Cuenta</string>
+
+    <string name="developer_name">Laia Lechma</string>
+    <string name="developer_bio">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+</resources>
