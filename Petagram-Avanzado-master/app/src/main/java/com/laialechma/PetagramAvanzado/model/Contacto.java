@@ -50,4 +50,8 @@ public class Contacto {
     public void setLikes(int likes) {
         this.likes = likes;
     }
+
+
+    public void setUrlFoto(String asString) {
+    }
 }

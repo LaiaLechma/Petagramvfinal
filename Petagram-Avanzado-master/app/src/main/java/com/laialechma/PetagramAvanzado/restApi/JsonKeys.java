@@ -32,8 +32,13 @@ public final class JsonKeys {
     public static final String FOLLOWED_ARRAY       = "data";
     public static final String FOLLOWED_USERNAME    = "username";
     public static final String FOLLOWED_ID          = "id";
-    public static final String FOLLOWED_FULLNAME    = "full_name";
+    public static final String FOLLOWED_FULLNAME = "full_name";
 
+    public static final String SEARCH_ARRAY         = "data";
+    public static final String SEARCH_ID            = "id";
+    public static final String SEARCH_FULLNAME      = "full_name";
+    public static final String SEARCH_USERNAME      = "username";
+    public static final String SEARCH_PROFILEPICTURE      = "profile_picture";
 
 
 }

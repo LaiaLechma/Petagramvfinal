@@ -47,7 +47,7 @@ public class RecyclerViewFragmentPresenter implements IRecylerViewFragmentPresen
         Gson gsonMediaRecent = restApiAdapter.construyeGsonDeserializadorMediaRecent();
         EndpointsApi endpointsApi = restApiAdapter.establecerConexionRestApiInstagram(gsonMediaRecent);
 
-        if (ActivityCuenta.usuarioActual == "self") {
+       // if (ActivityCuenta.usuarioActual == "self") {
             Call<ContactoResponse> contactoResponseCall = endpointsApi.getRecentMedia();
             contactoResponseCall.enqueue(new Callback<ContactoResponse>() {
                 @Override
@@ -66,26 +66,8 @@ public class RecyclerViewFragmentPresenter implements IRecylerViewFragmentPresen
 
         }
 
-            if (ActivityCuenta.usuarioActual == "appsrsanchezcobian") {
-                Call<ContactoResponse> contactoResponseCall = endpointsApi.getRecentMedia();
-                contactoResponseCall.enqueue(new Callback<ContactoResponse>() {
-                    @Override
-                    public void onResponse(Call<ContactoResponse> call, Response<ContactoResponse> response) {
-                        ContactoResponse contactoResponse = response.body();
-                        contactos = contactoResponse.getContactos();
-                        mostrarContactosRV();
-                    }
-
-                    @Override
-                    public void onFailure(Call<ContactoResponse> call, Throwable t) {
-                        Toast.makeText(context, "Error de conexión", Toast.LENGTH_SHORT).show();
-                        Log.e("Error de conexión", t.toString());
-                    }
-                });
 
 
-            }
-        }
 
     @Override
     public void mostrarContactosRV() {

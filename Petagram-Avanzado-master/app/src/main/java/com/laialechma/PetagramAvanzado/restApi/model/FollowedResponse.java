@@ -1,6 +1,7 @@
 package com.laialechma.PetagramAvanzado.restApi.model;
 
-import com.laialechma.PetagramAvanzado.model.Seguidor;
+import com.laialechma.PetagramAvanzado.model.Followed;
+
 
 import java.util.ArrayList;
 
@@ -9,13 +10,13 @@ import java.util.ArrayList;
  */
 public class FollowedResponse {
 
-        ArrayList<Seguidor> seguidores;
+    ArrayList<Followed> followeds;
 
-        public ArrayList<Seguidor> getSeguidores() {
-            return seguidores;
-        }
-
-        public void setSeguidores(ArrayList<Seguidor> seguidores) {
-            this.seguidores = seguidores;
-        }
+    public ArrayList<Followed> getFolloweds() {
+        return followeds;
     }
+
+    public void setFolloweds(ArrayList<Followed> followeds) {
+        this.followeds = followeds;
+    }
+}

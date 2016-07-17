@@ -49,7 +49,6 @@ public class RestApiAdapter {
     public Gson construyeDeserealizadorFollowedBy(){
         GsonBuilder gsonBuilder = new GsonBuilder();
         gsonBuilder.registerTypeAdapter(FollowedResponse.class, new FollowebByDeserealizador());
-        Gson miGson = gsonBuilder.create();
         return gsonBuilder.create();
     }
 
@@ -59,4 +58,6 @@ public class RestApiAdapter {
         Gson miGson = gsonBuilder.create();
         return gsonBuilder.create();
     }
+
+
 }

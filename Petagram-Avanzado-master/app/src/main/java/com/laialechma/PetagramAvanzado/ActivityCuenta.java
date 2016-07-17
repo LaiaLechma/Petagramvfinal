@@ -17,11 +17,11 @@ import com.laialechma.recyclerviewfragments.R;
 /**
  * Created by Laia Lechma on 27/06/2016.
  */
-public class ActivityCuenta extends AppCompatActivity {
+public class ActivityCuenta extends AppCompatActivity implements View.OnClickListener{
 
     TextInputEditText agregarusuario;
     ImageView star;
-    public static String usuarioActual = "self";
+    private Button botonGuardar;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,68 +37,43 @@ public class ActivityCuenta extends AppCompatActivity {
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
         agregarusuario = (TextInputEditText) findViewById(R.id.txtusuario);
-        Button botonGuardar = (Button) findViewById(R.id.botonGuardarCuenta);
-       // botonGuardar.setOnClickListener(this);
+        botonGuardar = (Button) findViewById(R.id.botonGuardarCuenta);
+        botonGuardar.setOnClickListener(this);
 
         SharedPreferences misReferencias = getSharedPreferences("shared", Context.MODE_PRIVATE);
         agregarusuario.setText( misReferencias.getString("perfilInstagram", ""));
     }
 
-        public void onClick(View v) {
-            guardarCuenta(v);
+
+    @Override
+    public void onClick(View v) {
+        GuardarCuenta();
+    }
+
+    private void GuardarCuenta() {
+        String usuario = agregarusuario.getText().toString().trim();
+        if(ValidaCampo(usuario)){
+            SharedPreferences perfilInstagram = getSharedPreferences("shared", Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = perfilInstagram.edit();
+            editor.putString("perfilInstagram", usuario);
+            editor.commit();
+
+            Toast.makeText(this, "La cuenta se guardó correctamente", Toast.LENGTH_SHORT).show();
+            finish();
+        }
+        else{
+            agregarusuario.setError("Ingrese una cuenta de usario");
         }
 
-
-
-    public void guardarCuenta(View v){
-        Toast.makeText(this, "User: " + usuarioActual, Toast.LENGTH_LONG).show();
-        Intent i = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(i);
-
     }
 
-    private void ConfigurarCuenta() {
-        String usuario = agregarusuario.getText().toString().trim();
-        agregarusuario = (TextInputEditText) findViewById(R.id.txtname);
-
-        Toast.makeText(this, "User: " + usuarioActual, Toast.LENGTH_LONG).show();
-        Intent i = new Intent(getApplicationContext(), MainActivity.class);
-        startActivity(i);
-    }
-
-    public void usuario01(View v) {
-        usuarioActual = "appsrsanchezcobian";
-        Toast.makeText(this, usuarioActual, Toast.LENGTH_SHORT).show();
+    private boolean ValidaCampo(String usuario) {
+        if(usuario.isEmpty() || usuario == null || usuario.length() == 0)
+            return false;
+        else
+            return true;
     }
 }
-
-        /*private void ConfigurarCuenta() {
-                String usuario = agregarusuario.getText().toString().trim();
-                agregarusuario = (TextInputEditText) findViewById(R.id.txtname);
-
-
-                if(Usuario(usuario)){
-                    SharedPreferences perfilInstagram = getSharedPreferences("shared", Context.MODE_PRIVATE);
-                    SharedPreferences.Editor editor = perfilInstagram.edit();
-                    editor.putString("perfilInstagram", usuario);
-                    editor.commit();
-
-                    //Toast.makeText(this, "La cuenta se guardó correctamente", Toast.LENGTH_SHORT).show();
-                    finish();
-                }
-                else{
-                    agregarusuario.setError("Cuenta de usario");
-                }
-            }
-
-            private boolean Usuario(String agregarusuario) {
-                if(agregarusuario.isEmpty() || agregarusuario == null || agregarusuario.length() == 0)
-                    return false;
-                else
-                    return true;
-            }
-
-        }*/
 
 
 

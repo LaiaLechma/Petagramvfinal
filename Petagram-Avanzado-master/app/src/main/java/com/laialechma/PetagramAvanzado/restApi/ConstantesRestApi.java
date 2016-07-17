@@ -21,14 +21,12 @@ public final class ConstantesRestApi {
     public static final String KEY_GET_RECENT_MEDIA_USER = "users/self/media/recent/";
     public static final String URL_GET_RECENT_MEDIA_USER = KEY_GET_RECENT_MEDIA_USER + KEY_ACCESS_TOKEN + ACCESS_TOKEN;
 
-    public static final String KEY_GET_MEDIA_USER = "users/self/media/";
-    public static final String URL_GET_MEDIA_USER = KEY_GET_MEDIA_USER + KEY_ACCESS_TOKEN + ACCESS_TOKEN;
-
     public static final String KEY_GET_RECENT_MEDIA_OTHER = "users/{id}/media/recent/";
     public static final String URL_GET_RECENT_MEDIA_OTHER = KEY_GET_RECENT_MEDIA_OTHER + KEY_ACCESS_TOKEN + ACCESS_TOKEN;
 
     public static final String KEY_GET_FOLLOWEDBY = "users/self/follows";
     public static final String URL_GET_FOLLOWEDBY = KEY_GET_FOLLOWEDBY + KEY_ACCESS_TOKEN + ACCESS_TOKEN;
 
-
+    public static final String KEY_SEARCH_USER = "users/search";
+    public static final String URL_SEARCH_USER = KEY_SEARCH_USER;
 }

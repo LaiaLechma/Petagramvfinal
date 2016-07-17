@@ -7,7 +7,7 @@ import com.google.gson.JsonDeserializer;
 import com.google.gson.JsonElement;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParseException;
-import com.laialechma.PetagramAvanzado.model.Seguidor;
+import com.laialechma.PetagramAvanzado.model.Followed;
 import com.laialechma.PetagramAvanzado.restApi.JsonKeys;
 import com.laialechma.PetagramAvanzado.restApi.model.FollowedResponse;
 
@@ -23,24 +23,25 @@ public class FollowebByDeserealizador  implements JsonDeserializer<FollowedRespo
         Gson gson = new Gson();
         FollowedResponse followedResponse = gson.fromJson(json, FollowedResponse.class);
         JsonArray jsonArray = json.getAsJsonObject().getAsJsonArray(JsonKeys.FOLLOWED_ARRAY);
-        followedResponse.setSeguidores(deserealizadorFollowBy(jsonArray));
+        followedResponse.setFolloweds(deserealizadorFollowBy(jsonArray));
         return followedResponse;
     }
 
-    private ArrayList<Seguidor> deserealizadorFollowBy(JsonArray jsonArray) {
-        ArrayList<Seguidor> seguidores = new ArrayList<>();
+    private ArrayList<Followed> deserealizadorFollowBy(JsonArray jsonArray) {
+        ArrayList<Followed> followeds = new ArrayList<>();
         for(int i = 0; i < jsonArray.size(); i++){
             JsonObject followedDataObject = jsonArray.get(i).getAsJsonObject();
-            Seguidor seguidor = new Seguidor();
-            seguidor.setId(followedDataObject.get(JsonKeys.FOLLOWED_ID).getAsString());
-            seguidor.setFullName(followedDataObject.get(JsonKeys.FOLLOWED_FULLNAME).getAsString());
-            seguidor.setUserName(followedDataObject.get(JsonKeys.FOLLOWED_USERNAME).getAsString());
+            Followed followed = new Followed();
+            followed.setId(followedDataObject.get(JsonKeys.FOLLOWED_ID).getAsString());
+            followed.setFullName(followedDataObject.get(JsonKeys.FOLLOWED_FULLNAME).getAsString());
+            followed.setUserName(followedDataObject.get(JsonKeys.FOLLOWED_USERNAME).getAsString());
 
-            seguidores.add(seguidor);
+            followeds.add(followed);
         }
 
-        return seguidores;
+        return followeds;
     }
 }
+
 
 

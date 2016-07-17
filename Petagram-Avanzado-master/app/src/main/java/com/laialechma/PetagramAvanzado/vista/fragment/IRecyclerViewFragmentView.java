@@ -2,7 +2,7 @@ package com.laialechma.PetagramAvanzado.vista.fragment;
 
 import com.laialechma.PetagramAvanzado.adapter.ContactoAdaptador;
 import com.laialechma.PetagramAvanzado.model.Contacto;
-import com.laialechma.PetagramAvanzado.model.Seguidor;
+import com.laialechma.PetagramAvanzado.model.Followed;
 
 import java.util.ArrayList;
 
