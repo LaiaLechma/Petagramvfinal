@@ -62,7 +62,7 @@ public class RecibirNotificaciones extends AppCompatActivity{
         Log.d("TOKEN", token);
         RestApiAdapter restApiAdapter = new RestApiAdapter();
         EndpointsApi endpointsApi = restApiAdapter.establecerConexionRestAPI();
-        Call<UsuarioResponse> usuarioResponseCall = endpointsApi.registrarTokenID(token,"samy_rastreador");
+        Call<UsuarioResponse> usuarioResponseCall = endpointsApi.registrarTokenID(token,getUsuarioInstagram());
 
         usuarioResponseCall.enqueue(new Callback<UsuarioResponse>() {
             @Override
@@ -80,13 +80,13 @@ public class RecibirNotificaciones extends AppCompatActivity{
 
             @Override
             public void onFailure(Call<UsuarioResponse> call, Throwable t) {
-                Log.d("Fallo conexion" ,t.toString() );
+               Log.d("Fallo conexion" ,t.toString() );
             }
         });
     }
     private String getUsuarioInstagram() {
         SharedPreferences misReferencias = getSharedPreferences("shared", Context.MODE_PRIVATE);
-        return misReferencias.getString("perfilInstagram", "");
+        return misReferencias.getString("perfilInstagram", "");//sobra , pero quiero mirar lo de get usuario
     }
 
 }
